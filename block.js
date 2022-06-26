@@ -31,7 +31,7 @@
 let fruits = "apple";
 console.log(fruits);
 {
-    var fruits = "orange";
+    const fruits = "orange";
     console.log(fruits);
 }
 console.log(fruits);

@@ -18,22 +18,42 @@
 
 //customizede filter
 
-let farr = [1,2,3,4,5,6,7,8,9,10];
+// let farr = [1,2,3,4,5,6,7,8,9,10];
 
-function mypolyfillsfilter(arr,cb)
+// function mypolyfillsfilter(arr,cb)
+// {
+//     let filteredArr = [];
+//     for(let i = 0;i<arr.length;i++)
+//     {
+//         if(cb(arr[i]))
+//             filteredArr.push(arr[i]);
+//     }
+//     return filteredArr;
+// }
+
+// function iseven(x)
+// {
+//     if( x % 2 == 0) return x;
+// }
+
+// console.log(mypolyfillsfilter(farr,iseven));
+
+
+//customized reduce
+
+let rA = [1,2,3,4,5];
+function mypolyfills(arr,acc,cb)
 {
-    let filteredArr = [];
     for(let i = 0;i<arr.length;i++)
     {
-        if(cb(arr[i]))
-            filteredArr.push(arr[i]);
+        acc = cb(acc,arr[i]);
     }
-    return filteredArr;
-}
+    return acc;
 
-function iseven(x)
+}
+function sum (a,b)
 {
-    if( x % 2 == 0) return x;
+    return a+b;
 }
 
-console.log(mypolyfillsfilter(farr,iseven));
+console.log(mypolyfills(rA,0,sum));

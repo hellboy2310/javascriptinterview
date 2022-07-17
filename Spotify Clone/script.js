@@ -3,55 +3,45 @@ let audioElement = new Audio('songs/1.mp3');
 let masterPlay = document.getElementById("masterPlay");
 let myProgressBar  =  document.getElementById("myProgressBar");
 let gif = document.getElementById("gif")
- let songs = [
-    {
-        songName : "salam-e-ishq",
-        filePath: "songs/1.mp3",
-        coverPath:"covers/1.jpg"
-    },
-    {
-        songName : "salam-e-ishq",
-        filePath: "songs/2.mp3",
-        coverPath:"covers/2.jpg"
-    },
-    {
-        songName : "salam-e-ishq",
-        filePath: "songs/3.mp3",
-        coverPath:"covers/3.jpg"
-    },
-    {
-        songName : "salam-e-ishq",
-        filePath: "songs/4.mp3",
-        coverPath:"covers/4.jpg"
-    },
-    {
-        songName : "salam-e-ishq",
-        filePath: "songs/5.mp3",
-        coverPath:"covers/5.jpg"
-    },
-    {
-        songName : "salam-e-ishq",
-        filePath: "songs/6.mp3",
-        coverPath:"covers/6.jpg"
-    },
-    {
-        songName : "salam-e-ishq",
-        filePath: "songs/7.mp3",
-        coverPath:"covers/7.jpg"
-    },
-    {
-        songName : "salam-e-ishq",
-        filePath: "songs/8.mp3",
-        coverPath:"covers/8.jpg"
-    },
-    {
-        songName : "salam-e-ishq",
-        filePath: "songs/9.mp3",
-        coverPath:"covers/9.jpg"
-    },
-    
- ]
+let songItems = Array.from(document.getElementsByClassName('songItem'));
+let playbtn = document.querySelectorAll(".songItemPlay");
 
+
+let songs = [{songName : "warriyo-Mortals", filePath: "songs/1.mp3",coverPath:"covers/1.jpg"},
+    {songName : "Cielo-Huma-Huma",filePath: "songs/2.mp3",coverPath:"covers/2.jpg"},
+    {songName : "DEAF KEV-INVINCIBLE",filePath: "songs/3.mp3",coverPath:"covers/3.jpg"},
+    {songName : "DIFFERENT HEAVEN",filePath: "songs/4.mp3",coverPath:"covers/4.jpg"},
+    {songName : "salam-e-ishq",filePath: "songs/5.mp3",coverPath:"covers/5.jpg"},
+    {songName : "treat you better",filePath: "songs/6.mp3",coverPath:"covers/6.jpg"},   
+    {songName : "Starboy",filePath: "songs/7.mp3",coverPath:"covers/7.jpg"},      
+    {songName : "warewolf",filePath: "songs/8.mp3",coverPath:"covers/8.jpg"},         
+    {songName : "warewolf",filePath: "songs/8.mp3",coverPath:"covers/9.jpg"}, ]
+
+ 
+
+
+const makeAllPlays = () =>{
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+        element.target.classList.remove('fa-pause-cirlce');
+        element.classList.add('fa-play-circle');
+    })
+}
+
+
+
+
+
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+    element.addEventListener('click', (e)=>{
+        makeAllPlays();
+        e.target.classList.remove('fa-play-circle');
+        e.target.classList.add('fa-pause-circle');
+    })
+})
+
+
+
+//handle play pause
 masterPlay.addEventListener('click',()=>{
     if(audioElement.paused || audioElement.currentTime <= 0)
     {
@@ -68,9 +58,9 @@ masterPlay.addEventListener('click',()=>{
     }
 })
 
-
-   audioElement.addEventListener("timeupdate",()=>{
     
+   audioElement.addEventListener("timeupdate",()=>{
+    //update seekbar
     let progress = parseInt((audioElement.currentTime/audioElement.duration)*100);
     myProgressBar.value = progress;
    })
@@ -78,3 +68,9 @@ masterPlay.addEventListener('click',()=>{
    myProgressBar.addEventListener("change",() =>{
     audioElement.currentTime = myProgressBar.value * audioElement.duration /100;
    })
+  
+  
+  
+
+   
+  

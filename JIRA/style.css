@@ -44,10 +44,10 @@ body{
     background-color: grey;
     height: 50vh;
     width: 50vw;
-    margin-left: 20rem;
-    margin-top: 7rem;
+    left: 25vw;
+    top: 25vh;
     display: none;
-
+    position: absolute;
     
 }
 .textarea-cont{
@@ -102,5 +102,29 @@ span{
 
 }
 
+.main-cont{
+margin-top: 2rem;
+display: flex;
+justify-content: space-evenly;
+flex-wrap: wrap;
+gap:2rem;
+}
+.ticket-cont{
+    background-color: lightblue;
+    height: 10rem;
+    width: 15rem;
+}
+.ticket-color{
+    height: 1rem;
+}
+.ticket-id{
+    height: 1.5rem;
+    background-color:palegreen;
+}
+.task-area{
+    height: calc(100%-1.5rem-1rem);
+    padding:5px;
+    font-size:1.25rem;
 
+}
 

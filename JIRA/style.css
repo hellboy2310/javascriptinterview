@@ -40,21 +40,65 @@ body{
 .remove-btn{
     font-size: 1.5rem;
 }
+.modal-cont{
+    background-color: grey;
+    height: 50vh;
+    width: 50vw;
+    margin-left: 20rem;
+    margin-top: 7rem;
+    display: flex;
+}
+.textarea-cont{
+    outline: none;
+    resize: none;
+    border: none;
+    background-color: palegoldenrod;
+    height: 100%;
+    width: 75%;
+    font-size: 2rem;
+    padding: 2rem;
+
+}
+.priority-color-cont{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.priority-color{
+    height: 3.5rem;
+    width:7rem ;
+    
+}
 
 .color{
     height: 1.5rem;
     width: 3rem;
 
 }
-.lightpink{
-    background-color: lightpink;
+.red{
+    background-color: rgb(179, 54, 54);
 }
 .blue{
     background-color: lightblue;
 }
+.yellow{
+    background-color: rgb(230, 230, 104);
+}
 .green{
-    background-color: lightgreen;
+    background-color: rgb(65, 151, 65);
 }
-.black{
-    background-color: black;
+span{
+        
+    margin-left: 0.5rem;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 1000;
+
 }
+
+
+
